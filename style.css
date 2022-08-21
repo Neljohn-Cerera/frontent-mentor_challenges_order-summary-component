@@ -1,0 +1,195 @@
+:root {
+  --clr-primary-400: hsl(223, 47%, 23%);
+  --clr-primary-100: hsl(225, 100%, 94%);
+
+  --clr-neutral-400: hsl(245, 75%, 52%);
+  --clr-neutral-300: hsl(224, 23%, 55%);
+  --clr-neutral-100: hsl(225, 100%, 98%);
+
+  --ff-primary: "Red Hat Display", sans-serif;
+  --ff-body: var(--ff-primary);
+  --ff-heading: var(--ff-primary);
+
+  --fw-regular: 500;
+  --fw-semi-bold: 700;
+  --fw-bold: 900;
+
+  --fs-200: 0.875rem;
+  --fs-300: 0.935rem;
+  --fs-400: 1rem;
+  --fs-600: 2rem;
+
+  --fs-body: var(--ff-400);
+  --fs-card-heading: var(--fs-600);
+  --fs-button: var(--ff-400);
+  --fs-link: var(--ff-300);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-400);
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Make images easier to work with */
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.container {
+  position: relative;
+  background-color: var(--clr-primary-100);
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+.container__background {
+  position: absolute;
+  top: 0;
+  inset-inline: 0;
+  z-index: 1;
+  height: 17rem;
+  width: 100%;
+}
+.card {
+  max-width: 23rem;
+  max-height: 100%;
+  background-color: var(--clr-neutral-100);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.card__image {
+  border-radius: 20px 20px 0px 0px;
+  height: 10rem;
+}
+.card__body {
+  background-color: #ffffff;
+  border-radius: 0px 0px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.3rem;
+  padding: 2.5rem;
+}
+.card__title {
+  color: var(--clr-primary-400);
+  font-weight: var(--fw-bold);
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+.card__details {
+  text-align: center;
+  font-size: var(--fs-300);
+  max-width: 100%;
+  color: var(--clr-neutral-300);
+}
+.card__plan {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--clr-neutral-100);
+  padding: 1rem;
+  border-radius: 10px;
+}
+.card__plan--container {
+  display: flex;
+}
+.card__plan--image {
+  margin-right: 1rem;
+}
+.card__plan--heading {
+  color: var(--clr-primary-400);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-300);
+}
+.card__plan--amount {
+  color: var(--clr-neutral-300);
+  font-size: var(--fs-300);
+  letter-spacing: 1px;
+}
+.card__plan--link {
+  color: var(--clr-neutral-400);
+  font-weight: var(--fw-semi-bold);
+  font-size: var(--fs-200);
+}
+.card__plan--link:hover {
+  opacity: 0.8;
+  color: var(--clr-neutral-400);
+}
+.card__buttons--container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.card__button {
+  display: block;
+  border: none;
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-neutral-400);
+  padding-block: 0.8rem;
+  border-radius: 10px;
+  font-weight: var(--fw-semi-bold);
+  font-size: var(--fs-200);
+}
+.card__button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  background-color: var(--clr-neutral-400);
+}
+.card__link--cancel {
+  color: var(--clr-neutral-300);
+  text-decoration: none;
+  font-weight: var(--fw-semi-bold);
+  font-size: var(--fs-200);
+  text-align: center;
+  margin-top: 2rem;
+  height: 100%;
+}
+
+.card__link--cancel:hover {
+  color: var(--clr-primary-400);
+}
